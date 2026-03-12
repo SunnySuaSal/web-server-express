@@ -11,11 +11,15 @@ class Server {
   //Los modificadores de acceso (public, private protected) son de TS no de JS, si los pones marca error.
   routes(){
     this.app.get("/", (req, res) => {
-      res.send("Hola express");
+      res.json({
+        msg: "Hola express"
+      });
     })
 
     this.app.get("/alumnos", (req, res) => {
-      res.send("Hola alumnos express");
+      res.json({
+        msg: "Hola alumnos"
+      });
     })
   }
 
