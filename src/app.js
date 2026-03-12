@@ -1,16 +1,7 @@
-const express = require("express");
-require("dotenv").config();
+require("dotenv").config(); //Con que esto se ejecute una vez ya se cargan las variables
 
-const port = process.env.PORT;
+const Server = require("./config/server");
 
-const app = express();
+const server = new Server();
 
-app.get("/", (req, res) => {
-  res.send("Hola express");
-})
-
-app.get("/alumnos", (req, res) => {
-  res.send("Hola alumnos express");
-})
-
-app.listen(port);
+server.listen();
