@@ -1,25 +1,13 @@
 const { Router } = require("express");
-const { countriesGet } = require("../controllers/countries.controller");
+const { getCountries, createCountry, updateCountry, deleteCountry } = require("../controllers/countries.controller");
 const router = Router();
 
-router.get("/", countriesGet);
+router.get("/", getCountries);
 
-router.post("/", (req, res) => { //subruta
-  res.status(200).json({
-    msg: "POST countries"
-  })
-});
+router.post("/", createCountry);
 
-router.put("/", (req, res) => { //subruta
-  res.status(200).json({
-    msg: "PUT countries"
-  })
-});
+router.put("/", updateCountry);
 
-router.delete("/", (req, res) => { //subruta
-  res.status(200).json({
-    msg: "DELETE countries"
-  })
-});
+router.delete("/", deleteCountry);
 
 module.exports = router;
