@@ -5,6 +5,8 @@ class Server {
   constructor(){
     this.app = express();
     this.port = process.env.PORT;
+    //lista las rutas de los modulos que tengas y usalas como variables
+    this.countriesPath = "/api/countries";
     this.routes();
   }
 
@@ -13,7 +15,7 @@ class Server {
 
     //Esto es un middleware, recibe una ruta e indica con qué archivo de configuración se va a comportar
     //Define una ruta principal
-    this.app.use("/api/countries", require("../routes/countries.route"));
+    this.app.use(this.countriesPath, require("../routes/countries.route"));
 
     this.app.get("/", (req, res) => {
       res.json({
