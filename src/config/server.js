@@ -10,6 +10,11 @@ class Server {
 
   //Los modificadores de acceso (public, private protected) son de TS no de JS, si los pones marca error.
   routes(){
+
+    //Esto es un middleware, recibe una ruta e indica con qué archivo de configuración se va a comportar
+    //Define una ruta principal
+    this.app.use("/api/countries", require("../routes/countries.route"));
+
     this.app.get("/", (req, res) => {
       res.json({
         msg: "Hola express"
