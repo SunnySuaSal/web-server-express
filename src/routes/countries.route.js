@@ -1,11 +1,8 @@
 const { Router } = require("express");
+const { countriesGet } = require("../controllers/countries.controller");
 const router = Router();
 
-router.get("/", (req, res) => { //subruta
-  res.status(200).json({
-    msg: "GET countries"
-  })
-});
+router.get("/", countriesGet);
 
 router.post("/", (req, res) => { //subruta
   res.status(200).json({
