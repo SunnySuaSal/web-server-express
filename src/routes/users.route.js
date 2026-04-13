@@ -1,28 +1,13 @@
 const { Router } = require("express");
+const { getUsers, createUser, updateUser, deleteUser } = require("../controllers/users.controller");
 const router = Router();
 
-router.get("/", (req, res) => { //subruta
-  res.status(200).json({
-    msg: "GET users"
-  })
-});
+router.get("/", getUsers);
 
-router.post("/", (req, res) => { //subruta
-  res.status(200).json({
-    msg: "POST users"
-  })
-});
+router.post("/", createUser);
 
-router.put("/", (req, res) => { //subruta
-  res.status(200).json({
-    msg: "PUT users"
-  })
-});
+router.put("/", updateUser);
 
-router.delete("/", (req, res) => { //subruta
-  res.status(200).json({
-    msg: "DELETE users"
-  })
-});
+router.delete("/", deleteUser);
 
 module.exports = router;
