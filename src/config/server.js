@@ -8,6 +8,7 @@ class Server {
     //lista las rutas de los modulos que tengas y usalas como variables
     this.countriesPath = "/api/countries";
     this.usersPath = "/api/users";
+    this.app.use(express.json()); //middleware for discrete requests
     this.routes();
   }
 
