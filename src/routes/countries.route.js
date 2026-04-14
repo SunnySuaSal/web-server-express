@@ -8,6 +8,6 @@ router.post("/", createCountry);
 
 router.put("/", updateCountry);
 
-router.delete("/", deleteCountry);
+router.delete("/:id", deleteCountry);
 
 module.exports = router;
