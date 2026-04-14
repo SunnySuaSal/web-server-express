@@ -19,6 +19,13 @@ const createCountry = (req = request, res = response) => { //subruta
 
   const { name, population, flag } = req.body;
 
+  if(!name || !population || !flag){
+    res.status(400).json({
+      msg: "Datos incompletos"
+    })
+    return;
+  }
+
   res.status(200).json({
     msg: "POST countries",
     name,
