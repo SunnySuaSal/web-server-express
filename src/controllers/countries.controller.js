@@ -7,10 +7,11 @@ const { response, request } = require("express");
 
 const getCountries = (req = request, res = response) => { //subruta
 
-  console.log(req.query);
+  const { q } = req.query;
 
   res.status(200).json({
-    msg: "GET countries"
+    msg: "GET countries",
+    q
   })
 }
 
